@@ -1,0 +1,177 @@
+/*样式重置*/
+body,h1,h2,h3,ul,li,p{margin:0;padding:0}
+body{ font:12px/1.5 "Microsoft YaHei",arial, verdana, sans-serif}
+h1,h2,h3{font-size:100%;font-weight:normal}
+li{list-style:none}
+img{border:0}
+table{border-collapse:collapse;border-spacing:0}
+a{text-decoration:none}
+a:hover{text-decoration:underline}
+.cle:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.cle{ display:inline-block}
+.cle{ display:block}
+.clear {clear: both;}
+/*正式代码*/
+/*表格开始*/
+.table{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+}
+table.table_test{
+    border-right:3px solid #fff; 
+    border-bottom:3px solid #fff;
+}
+table.table_test tr{
+    width:100%;
+}
+table.table_test td{
+    font-size:15px;
+    line-height:19px;
+    text-align:center;
+    border-top:3px solid #fff;
+    border-left:3px solid #fff;
+}
+table.table_test tr:nth-child(2) td,
+table.table_test tr:nth-child(3) td,
+table.table_test tr:nth-child(4) td{
+    color:#f6070d;
+}
+table.table_test tr:nth-child(odd){
+    background-color:#d4c9c7;
+}
+table.table_test tr:first-child{
+    color:#fff;
+    background-color:#000;
+}
+/*表格结束*/
+/*边框开始*/
+.border{
+    display:block;
+    margin:0 auto;
+    margin-top:280px;
+    width:300px;
+    height:50px;
+    border:2px solid #eee;
+}
+.border_1{
+    display:block;
+    margin:0 auto;
+    margin-top:100px;
+    width:500px;
+    height:50px;
+    border:2px solid #7aaff1;
+    box-shadow:-4px -4px 8px #7aaff1;
+    transition:all 1s;
+}
+.border_1:hover{
+    box-shadow:18px 18px 18px #7aaff1;
+}
+/*边框结束*/
+
+/*幻灯开始*/
+        ul{
+            list-style: none;
+        }
+        
+        .container,.container_1,.container_2{
+            position: relative;
+            margin:0 auto;
+            margin-top:100px;
+            width: 500px;
+            height: 375px;
+            overflow: hidden;/*隐藏溢出的图片*/
+        }
+        .pic{
+            width:2000px;/*4张图的宽度*/
+            position: absolute;/*基于父容器进行定位*/
+            left:0;
+            animation-name: focusmap;
+            animation-duration: 9s;
+            animation-iteration-count: infinite;/*动画调用可以简写*/
+
+        }
+        .container{
+            width:400px;
+            height:300px;
+        }
+        .container_1 .pic{
+            animation-name: focusmap_1;
+        }
+
+         @keyframes focusmap {
+            0%,30%{
+                left: 0;
+            }
+            35%,65%{
+                left: -500px;
+            }
+            70%,99%{
+                left: -1000px;
+            }
+            100%{
+                left: -1500px;
+            }
+           
+        }
+        @keyframes focusmap_1 {
+            0%,15%{
+                left: 0;
+            }
+            15%,30%{
+                left: -250px;
+            }
+            35%,50%{
+                left: -500px;
+            }
+            50%,65%{
+                left: -750px;
+            }
+            70%,85%{
+                left: -1000px;
+            }
+            85%,99%{
+                left: -1250px;
+            }
+            100%{
+                left: -1500px;
+            }
+           
+        }
+        .pic li{
+            float: left;
+        }
+
+        .pic li img {
+            width: 500px;
+            height: auto;
+        }
+        ul.pointer{
+            position:absolute;
+            right:10px;
+            bottom:10px;
+        }
+        li.pointer_list{
+            float:left;
+            margin-left:5px;
+            width:10px;
+            height:10px;
+            border:1px solid #eee;
+            border-radius:50%;
+            animation:pointer_change 9s ease 0s infinite; 
+            cursor:pointer;
+        }
+        li.pointer_list:nth-child(2){
+            animation-delay:3s;
+        }
+        li.pointer_list:nth-child(3){
+            animation-delay:6s;
+        }
+        @keyframes pointer_change{
+            0%{background-color:#eee;}
+            25%{background-color:#eee}
+            50%{background-color:transparent}
+            75%{background-color:transparent}
+        }
+/*幻灯结束*/
